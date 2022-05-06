@@ -1,0 +1,119 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[UKenglish]{babel} % UK writing style
+\usepackage[a4paper, total={155mm, 245mm}]{geometry} % Good margins
+
+\usepackage{array}
+
+% PLEASE NOTE: The vast majority of this preamble is taken from https://latex-tutorial.com/cv-latex-guide/
+
+\pagestyle{empty}
+
+\usepackage{sectsty}
+
+\sectionfont{%
+	\large\bfseries
+	\sectionrule{0pt}{0pt}{-5pt}{1pt}}
+
+% Size of the boxes used to align text
+\newlength{\spacebox}
+\settowidth{\spacebox}{123456789}
+
+% Vertical space separator between entries
+\newcommand{\sepspace}{\vspace*{1em}}
+
+\newcommand{\setspacing}{\setlength{\parindent}{0em}\setlength{\parskip}{1em}}
+
+\newcommand{\name}[1]{
+	\Huge
+	% Name centered and bold
+	\begin{center}\textbf{#1}\end{center}\par
+	\normalsize}
+
+\newcommand{\pronouns}[1]{
+	\normalsize
+	% Pronouns centered and slanted
+	\begin{center}\textsl{#1}\end{center}\par}
+
+\newcommand{\info}[2]{
+	% Set indentation
+	\noindent\hangindent=2em\hangafter=0
+	% Create a box to align two pieces of text
+	\parbox{\spacebox}{%
+		\textsl{#1}}
+	#2\par}
+
+\newcommand{\skill}[2]{
+	\noindent\hangindent=2em\hangafter=0
+	\parbox{3\spacebox}{%
+		\textsc{#1}}
+	#2\par}
+
+\newcommand{\lang}[2]{
+	\noindent\hangindent=2em\hangafter=0
+	\parbox{\spacebox}{%
+		\textbf{#1}}
+	#2\par}
+
+\newcommand{\qualification}[4]{
+	% Name of qualification
+	\noindent\textbf{#1}
+	\hfill
+	\framebox{%
+		\parbox{6em}{%
+			\centering\textbf{#2}}}\par
+	% New paragraph with the school in italics
+	\noindent\textit{#3}\par
+	% Description in smaller text
+	\vspace*{0.5em}
+	\noindent\hangindent=2em\hangafter=0\small #4
+	\normalsize\par}
+
+\newcommand{\work}[4]{
+	% name of the job
+	\noindent\textbf{#1}
+	\hfill
+	\framebox{%
+		\parbox{6em}{%
+			\centering\textbf{#2}}}\par
+	% New paragraph with the place in italics
+	\noindent\textit{#3}\par
+	% Description in smaller text
+	\vspace*{0.5em}
+	\noindent\hangindent=2em\hangafter=0\small #4
+	\normalsize\par}
+
+\begin{document}
+
+\name{Dyson Dyson}
+\vspace*{-1.5em}
+\pronouns{they/them}
+
+\sepspace
+
+\info{Email}{\texttt{dyson.dyson@icloud.com}}
+\info{Phone}{07802 844691}
+
+\section*{Profile}
+Words words words
+
+% TODO: Get work experience
+%\section*{Work Experience}
+
+\section*{Education}
+
+\begin{center}
+\framebox{\parbox{6em}{%
+	\centering\textbf{GCSEs}\par}}
+\end{center}
+
+\begin{center}
+	\begin{tabular}{m{16em} m{10em}}
+		9 in Mathematics (Higher) & 9 in Computer Science \\
+		99 in Combined Science (Higher) & 8 in History \\
+		7 in English Language & 7 in German (Higher) \\
+		6 in English Literature
+	\end{tabular}
+\end{center}
+
+\end{document}

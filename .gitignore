@@ -1,0 +1,30 @@
+# Ignore all LaTeX auxiliary files
+# These are just the TeXstudio defaults
+*.log
+*.aux
+*.dvi
+*.lof
+*.lot
+*.bit
+*.idx
+*.glo
+*.bbl
+*.bcf
+*.ilg
+*.toc
+*.ind
+*.out
+*.blg
+*.fdb_latexmk
+*.fls
+*.run.xml
+*.synctex*
+
+# We want to ignore the PDF itself to allow me to keep a local build
+*.pdf
+
+# Ignore the TeXstudio session file
+*.txss
+
+# Ignore the stuff for the appendix
+_minted-main/
