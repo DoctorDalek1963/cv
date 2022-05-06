@@ -1,0 +1,37 @@
+name: Compile PDF for gh-pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  compile-latex:
+    runs-on: ubuntu-latest
+
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Compile main.tex
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+          args: -lualatex -file-line-error -halt-on-error -interaction=nonstopmode -shell-escape
+
+      - name: Put pdf in correct directory
+        run: |
+          mkdir -p pdf_dir
+          mv main.pdf pdf_dir/cv.pdf
+
+      - name: Deploy PDF
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: pdf_dir/
+          keep_files: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'compile pdf:'
