@@ -28,10 +28,6 @@ clean_aux_files() {
 
 [ -d "/home/dyson/.texlive/2021/bin/x86_64-linux" ] && PATH="/home/dyson/.texlive/2021/bin/x86_64-linux:$PATH"
 
-rm -f main.pdf
-
 [ "$1" == "clean" ] && clean_aux_files
 
 latexmk -lualatex -file-line-error -halt-on-error -interaction=nonstopmode -shell-escape -synctex=1 -cd main
-
-clean_aux_files
