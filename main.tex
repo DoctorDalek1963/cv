@@ -49,41 +49,15 @@
 		\textsl{#1}}
 	#2\par}
 
-\newcommand{\skill}[2]{
-	\noindent\hangindent=2em\hangafter=0
-	\parbox{3\spacebox}{%
-		\textsc{#1}}
-	#2\par}
-
-\newcommand{\lang}[2]{
-	\noindent\hangindent=2em\hangafter=0
-	\parbox{\spacebox}{%
-		\textbf{#1}}
-	#2\par}
-
-\newcommand{\qualification}[4]{
-	% Name of qualification
-	\noindent\textbf{#1}
-	\hfill
-	\framebox{%
-		\parbox{6em}{%
-			\centering\textbf{#2}}}\par
-	% New paragraph with the school in italics
-	\noindent\textit{#3}\par
-	% Description in smaller text
-	\vspace*{0.5em}
-	\noindent\hangindent=2em\hangafter=0\small #4
-	\normalsize\par}
-
 \newcommand{\work}[4]{
-	% name of the job
+	% Name of the job
 	\noindent\textbf{#1}
 	\hfill
 	\framebox{%
 		\parbox{6em}{%
 			\centering\textbf{#2}}}\par
 	% New paragraph with the place in italics
-	\noindent\textit{#3}\par
+	\noindent\textsl{#3}\par
 	% Description in smaller text
 	\vspace*{0.5em}
 	\noindent\hangindent=2em\hangafter=0\small #4
@@ -101,12 +75,24 @@
 \info{Phone}{07802 844691}
 
 \section*{Profile}
-I'm a very high performing Sixth Form student with a particular aptitude for Mathematics and Computer Science. I currently have no experience in a workplace but do have experience as a volunteer teaching assistant and as the manager of an after school club for younger year groups in my school. I'm very quick and eager to learn new skills and take on new challenges in a job.
+I'm a very high performing Sixth Form student with a particular aptitude for Mathematics and Computer Science. I currently have experience as a volunteer teaching assistant and as the manager of an after school club for younger year groups in my school. I'm very quick and eager to learn new skills and take on new challenges in a job.
 
-% TODO: Get work experience
-%\section*{Work Experience}
+\section*{Work Experience}
+
+\work{Gardener}{July 2022 - Present}{Richmond Villages Northampton}{When working in this care village, I gained valuable experience in communication when I had to interact with the residents. They are all old and many of them have things like dementia or Alzheimer's, meaning patience and clear communication is key. I also learned about good teamwork skills, which I had to use daily with my colleagues.}
 
 \section*{Education}
+
+\begin{center}
+\framebox{\parbox{7em}{%
+	\centering\textbf{AS Levels}\par}}
+\end{center}
+
+\begin{center}
+	\begin{tabular}{m{12em} m{12em}}
+		A in Mathematics & A in Further Mathematics
+	\end{tabular}
+\end{center}
 
 \begin{center}
 \framebox{\parbox{6em}{%
