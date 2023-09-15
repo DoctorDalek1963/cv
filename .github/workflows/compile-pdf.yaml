@@ -15,14 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Hack
-        run: mkdir "${HOME}/.fonts" && pushd "$HOME/.fonts" && wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip && unzip Hack.zip && rm Hack.zip && fc-cache -fv && popd
-        shell: bash
-
-      - name: Force update lualatex fonts
-        run: OSFONTDIR="${HOME}/.fonts:/usr/share/fonts/:/usr/share/texmf/fonts/" mkluatexfontdb --force --verbose=-1 -vvv
-        shell: bash
-
       - name: Compile main.tex
         uses: xu-cheng/latex-action@v2
         with:
