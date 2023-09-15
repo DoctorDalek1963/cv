@@ -30,4 +30,4 @@ clean_aux_files() {
 
 [ "$1" == "clean" ] && clean_aux_files
 
-latexmk -lualatex -file-line-error -halt-on-error -interaction=nonstopmode -shell-escape -synctex=1 -cd main
+lualatex -file-line-error -halt-on-error -interaction=nonstopmode -shell-escape -synctex=1 -cd main

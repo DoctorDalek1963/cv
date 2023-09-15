@@ -3,9 +3,12 @@
 \usepackage[UKenglish]{babel} % UK writing style
 \usepackage[a4paper, total={155mm, 245mm}]{geometry} % Good margins
 
+\usepackage[quiet]{fontspec}
+\setmonofont[Scale=MatchLowercase]{Hack Nerd Font}
+
 \usepackage{array}
 
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \hypersetup{
 	pdftitle = {CV for Dyson Dyson},
 	pdfauthor = {Dyson Dyson}
@@ -26,9 +29,9 @@
 \settowidth{\spacebox}{123456789}
 
 % Vertical space separator between entries
-\newcommand{\sepspace}{\vspace*{1em}}
+\newcommand{\sepspace}{\vspace*{1ex}}
 
-\newcommand{\setspacing}{\setlength{\parindent}{0em}\setlength{\parskip}{1em}}
+\newcommand{\setspacing}{\setlength{\parindent}{0em}\setlength{\parskip}{2.5ex}}
 
 \newcommand{\name}[1]{
 	\Huge
@@ -49,12 +52,20 @@
 		\textsl{#1}}
 	#2\par}
 
+\newcommand{\skill}[2]{
+	% set specific indentation for personal information
+	\noindent\hangindent=2em\hangafter=0
+	% create a box to align two pieces of text
+	\parbox{3\spacebox}{
+		\textbf{#1}}
+	#2 \par}
+
 \newcommand{\work}[4]{
 	% Name of the job
 	\noindent\textbf{#1}
 	\hfill
 	\framebox{%
-		\parbox{6em}{%
+		\parbox{14em}{%
 			\centering\textbf{#2}}}\par
 	% New paragraph with the place in italics
 	\noindent\textsl{#3}\par
@@ -66,31 +77,41 @@
 \begin{document}
 
 \name{Dyson Dyson}
-\vspace*{-1.5em}
+\vspace*{-1.5ex}
 \pronouns{they/them}
 
 \sepspace
 
 \info{Email}{\href{mailto:dyson.dyson@icloud.com}{\texttt{dyson.dyson@icloud.com}}}
 \info{Phone}{07802 844691}
+\info{GitHub}{\url{https://github.com/DoctorDalek1963}}
 
 \section*{Profile}
-I'm a very high performing Sixth Form student with a particular aptitude for Mathematics and Computer Science. I currently have experience as a volunteer teaching assistant and as the manager of an after school club for younger year groups in my school. I'm very quick and eager to learn new skills and take on new challenges in a job.
+\vspace{-1.5ex}
+{
+\setspacing
+I am currently in a gap year, intending to study Mathematics at university starting in September 2024, and I am looking for a part time position until then. I am very aspirational. My A Level grades were good enough to get me in basically anywhere, but I wanted to go to Cambridge and I unfortunately missed the requirements on their entrance exam, so I decided to take a gap year and apply again.
 
-\section*{Work Experience}
+I have a strong passion for mathematics and programming, and I have a sizeable portfolio of past projects on my GitHub. I'm quick and eager to learn new skills and take on new challenges in a professional environment.
+}
 
-\work{Gardener}{July 2022 - Present}{Richmond Villages Northampton}{When working in this care village, I gained valuable experience in communication when I had to interact with the residents. They are all old and many of them have things like dementia or Alzheimer's, meaning patience and clear communication is key. I also learned about good teamwork skills, which I had to use daily with my colleagues.}
+\section*{Employment}
+
+\work{Gardener}{July 2022 \-- August 2022}{Richmond Villages Northampton}{When working in this care village, I gained valuable experience in communication when I had to interact with the residents. They are all elderly and many of them have conditions like dementia or Alzheimer's, meaning patience and clear communication is key. I also learned about good teamwork skills, which I had to use daily with my colleagues.}
+\vspace{4ex}
+\work{After-school club manager (volunteer)}{January 2022 \-- June 2022}{The Duston School}{While in Year 12, I helped to run and manage an after-school maths club for younger year groups. It was a club designed to challenge students with mathematical puzzles that they had not previously seen. I had to procure the questions in advance, create PowerPoints, and help the students when they needed it.}
 
 \section*{Education}
 
 \begin{center}
-\framebox{\parbox{7em}{%
-	\centering\textbf{AS Levels}\par}}
+\framebox{\parbox{6em}{%
+	\centering\textbf{A Levels}\par}}
 \end{center}
 
 \begin{center}
 	\begin{tabular}{m{12em} m{12em}}
-		A in Mathematics & A in Further Mathematics
+		A* in Mathematics & A* in Further Mathematics \\
+		A in Computer Science
 	\end{tabular}
 \end{center}
 
@@ -107,5 +128,10 @@ I'm a very high performing Sixth Form student with a particular aptitude for Mat
 		6 in English Literature
 	\end{tabular}
 \end{center}
+
+% technical skills
+\section*{Technical skills}
+\skill{Programming languages}{Rust, Python, Java, Bash, \LaTeX}
+\skill{Other}{Markdown, Git, Neovim, Ubuntu, Linux}
 
 \end{document}
