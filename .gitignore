@@ -26,5 +26,5 @@
 # Ignore the TeXstudio session file
 *.txss
 
-# Ignore the stuff for the appendix
-_minted-main/
+# Nix build
+result
